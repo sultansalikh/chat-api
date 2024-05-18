@@ -1,0 +1,29 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Simple chat-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sultansalikh/chat-api.git"
+  },
+  "keywords": [
+    "chat-api"
+  ],
+  "author": "Sultan Salikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sultansalikh/chat-api/issues"
+  },
+  "homepage": "https://github.com/sultansalikh/chat-api#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7",
+    "socket.io": "^4.7.5",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
