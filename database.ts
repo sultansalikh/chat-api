@@ -5,7 +5,7 @@ let db;
 
 class MySqlDB {
     constructor() {
-        db = mysql.createConnection({
+        db = mysql.createConnection({ 
             host: 'localhost',
             user: "sultan",
             password: "123sultan321",
