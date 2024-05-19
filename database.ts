@@ -1,15 +1,15 @@
 import mysql from 'mysql2';
 import { logger } from './logger';
 
-let db;
+let db: any;
 
 class MySqlDB {
     constructor() {
         db = mysql.createConnection({ 
-            host: 'localhost',
-            user: "sultan",
-            password: "123sultan321",
-            database: "chat-api",
+            host: '127.0.0.1',
+            user: "root",
+            password: "",
+            database: "",
         });
 
         db.connect((error: Error | unknown) => {
@@ -64,7 +64,7 @@ class MySqlDB {
 
     async fetchMessage(bind: { firstName: string, id: number }) {
         try {
-            let query: string = 'SELECT * from message', where_clause: string = '';
+            let query: string = 'SELECT * from messages', where_clause: string = '';
             const bindArr: (string | number)[] = [];
 
             if (bind.id) {
@@ -94,7 +94,7 @@ class MySqlDB {
 
     async createUserMessage(bind: {message: string, firstName: string, userId: number}) {
         try {
-            await db.execute(`INSERT INTO message (message_text, first_name, user_id) VALUES (?,?, ?)`, [bind.message, bind.firstName, bind.userId]);
+            await db.execute(`INSERT INTO messages (message_text, first_name, user_id) VALUES (?,?, ?)`, [bind.message, bind.firstName, bind.userId]);
         } catch (error) {
             logger.error(`Error in createUserMessage func: ${error}`);
         }
